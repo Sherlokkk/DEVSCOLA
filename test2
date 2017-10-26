@@ -1,0 +1,18 @@
+#! /bin/sh
+arg=$1
+echo $arg
+test_array=('AA' 'BB' 'CC' 'DD' 'EE')
+element_count=${#test_array[@]}
+index=0
+
+while [ $index -lt $element_count ]
+do    
+  if [ "${test_array[index]}" = "$arg" ]
+  then
+     echo $((index+1))
+     break
+  fi
+  ((index++))
+done
+
+echo ${test_array[3]}
